@@ -60,7 +60,7 @@ abstract public class CombatUnit extends Entity {
         this.setDefRatingBase(getDefRatingBase() + 2);
         this.setHealthMax(this.getHealthMax() + 10);
         this.setHealthCurrent(this.getHealthCurrent() + 10);
-printToConsole(levelUpString());
+        printToConsole(levelUpString());
     }
 
     public void attack(CombatUnit target){

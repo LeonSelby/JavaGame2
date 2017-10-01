@@ -10,6 +10,7 @@ import javagame2.items.weapons.Weapon;
 import lombok.Data;
 
 import java.awt.*;
+import java.util.Random;
 
 import static javagame2.GameUtility.*;
 
@@ -50,7 +51,7 @@ public class Game {
         }else if(ans == 5){
             player1.takeHpPotion();
         }else if(ans == 6){
-            player1.toString();
+            printToConsole(player1.toString());
         }
     }
 
@@ -60,45 +61,64 @@ public class Game {
         int targetTile = board.getBoardArray()[targetLoc.x][targetLoc.y];
         String tile = determineTargetTile(targetTile);
         if (gameUtils.getListOfUnMoveableTiles().contains(targetTile)){
-            System.out.println("Can't move here.");
+            printToConsole(cantMoveString());
             if(gameUtils.getListOfInteractiveTiles().contains(targetTile)){
-                boolean ans = TakeInput.requestYesOrNo
-                        ("But you can interact with " + tile + ", would you like to?");
+                boolean ans = TakeInput.requestYesOrNo(interactString(tile));
                 if(ans){
                     if(targetTile == 1){
                         Item item = determineItemLoot();
                         player1.getInventory().addItemToInventory(item);
-                        System.out.println(item.getName() + " has been added to bag!");
-                        board.getBoardArray()[targetLoc.x][targetLoc.y] = 9; // UNDO COMMENT TO GIVE LOOT FOREVER
-                        board.getPureBoard()[targetLoc.x][targetLoc.y] = 9; // UNDO COMMENT TO GIVE LOOT FOREVER
+                        depleteTile(targetLoc);
                     }else if(targetTile == 2){
                         shop.visit();
                     }else if(targetTile == 5){
                         Battle battle = new Battle(player1, false);
                         if(!tyrant.isDead()){battle.bossBattle(tyrant);} else if (werewolf.isDead()){ battle.bossBattle(werewolf);}
-                        board.getBoardArray()[targetLoc.x][targetLoc.y] = 9; // UNDO COMMENT TO GIVE Boss FOREVER
-                        board.getPureBoard()[targetLoc.x][targetLoc.y] = 9; // UNDO COMMENT TO GIVE Boss FOREVER
+                        depleteTile(targetLoc);
                     }else if(targetTile == 6) {
-                        System.out.println("Buffs not yet added!");
+                        printToConsole("Buffs not yet added!");
                     }else if(targetTile == 9){
-                        System.out.println("That " + tile + " has already been spent!");
+                        printToConsole("That " + tile + " has already been spent!");
                     }else if(targetTile == 10){
                         Sword superSword = new Sword("Super Sword", 1000, 60);
                         player1.getInventory().addItemToInventory(superSword);
-                        System.out.println(superSword.getName()+ " has been added to bag!");
-                        board.getBoardArray()[targetLoc.x][targetLoc.y] = 9; // UNDO COMMENT TO GIVE LOOT FOREVER
-                        board.getPureBoard()[targetLoc.x][targetLoc.y] = 9; // UNDO COMMENT TO GIVE LOOT FOREVER
+                        depleteTile(targetLoc);
                     }
                 }
             }else {
-                System.out.print("A " + tile + " blocks your way!");
-            }
+                printToConsole(blocksYourWayString(tile));}
         } else{
             player1.setLocation(targetLoc);
             player1.setPrevLocation(startingLoc);
+            checkIfCombatSpawns(targetTile);
+            checkForMessage(targetTile, targetLoc);
         }
         board.updateBoard();
     }
 
+    private void checkForMessage(int targetTile, Point targetLoc) {
+        if(targetTile==7){
+            printToConsole(bossWarningString());
+            depleteTile(targetLoc);
+        }
+    }
 
+    private void checkIfCombatSpawns(int targetTile) {
+        Random random = new Random();
+        int n = random.nextInt(10) + 1;
+        if(n>8) {
+            if (targetTile == 3) {
+                Battle battle = new Battle(player1, false);
+                battle.randomBattle();
+            } else if (targetTile == 4) {
+                Battle battle = new Battle(player1, true);
+                battle.randomBattle();
+            }
+        }
+    }
+
+    private void depleteTile(Point targetLoc){
+        board.getBoardArray()[targetLoc.x][targetLoc.y] = 9;
+        board.getPureBoard()[targetLoc.x][targetLoc.y] = 9;
+    }
 }

@@ -33,6 +33,10 @@ public class Player extends CombatUnit {
     public Player(String name) {
         super(name);
         this.getInventory().populatePlayersInventory();
+        this.setHealthMax(75);
+        this.setHealthCurrent(75);
+        this.location = new Point(10, 1);
+        this.prevLocation = new Point(10, 1);
     }
     //Methods
     //Combat
@@ -133,7 +137,9 @@ public class Player extends CombatUnit {
     //Level
     public void checkIfShouldLevelUp(){
         if(this.getLevel() < 10){
-            if(this.getLevel() < Math.ceil(this.getExperiencePoints()%100)){
+            double currentEXP = Math.floor(this.getExperiencePoints()/100) + 1;
+            if(this.getLevel() < currentEXP){
+//                System.out.println((currentEXPmod + " is bigger than " + this.getLevel()));
             this.levelUp();
             this.checkIfShouldLevelUp();
         }}

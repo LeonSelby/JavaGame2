@@ -13,6 +13,6 @@ public class CoinBag extends Item {
 
     @Override
     public String getName(){
-        return this.getName() + "(" + this.amountOfCoins+ ")";
+        return "Bag of Coins(" + this.amountOfCoins+ ")";
     }
 }

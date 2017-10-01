@@ -86,7 +86,7 @@ public class Inventory {
             } else if (item instanceof Scroll) {
                 temp =listOfScrolls.get(19);
             }
-        }catch (NullPointerException npe){ tmp = false; }
+        }catch (IndexOutOfBoundsException e){ tmp = false; }
         return tmp;
     }
 
@@ -190,4 +190,8 @@ public class Inventory {
         }
     }
 
+    //Interact
+
+    public void open(){
+    }
 }

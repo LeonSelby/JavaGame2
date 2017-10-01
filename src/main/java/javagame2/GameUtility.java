@@ -117,7 +117,13 @@ public class GameUtility {
     //Character
     public static String levelUpString(){return "You have gained a level! Ratings have increased by 2, and health by 20!";}
 
+    public static String presentOptions(){
+        return "What would you like to do?" + "\n 1. Move. \n 2. See Map.\n" +
+                " 3. See Equipped Items. \n 4. See Inventory. \n 5. Take Potion. \n 6. See statistics.";}
+
     public static String noMapString(){return "You don't own a Map!";}
+
+    public static String bossWarningString(){return "A boss looms ahead, be careful!";}
 
     //Combat
     public static String fleeFailureString(){return "Flee failed!";}
@@ -136,7 +142,7 @@ public class GameUtility {
 
     public static String declareLootString(Item loot){return loot.getName() + " has dropped!";}
 
-    public static String declareEXPString(int exp, Player player){return player.getName() + " has gained " + " experience!";}
+    public static String declareEXPString(int exp, Player player){return player.getName() + " has gained " + exp + " experience!";}
 
     public static String optionsString(){
         return "Please select your next action:\n1. Attack\n2. Take Potion\n3. Flee";
@@ -207,10 +213,12 @@ public class GameUtility {
         return tile;
     }
 
-    public static String presentOptions(){
-        return "What would you like to do?" + "\n 1. Move. \n 2. See Map.\n" +
-                " 3. See Equipped Items. \4. See Inventory. \n 5. Take Potion. \n 6. See statistics.";
-    }
+    public static String cantMoveString(){return "You can't move there!";}
+
+    public static String interactString(String tile){return "But you can interact with " + tile + ", would you like to?";}
+
+    public static String blocksYourWayString(String tile){return "A " + tile + " blocks your way!";}
+
 
     //Store
     public static String welcomeToStoreString(){return "Welcome to my Store!";}
