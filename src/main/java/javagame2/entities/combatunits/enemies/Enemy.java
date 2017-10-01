@@ -11,4 +11,5 @@ abstract public class Enemy extends CombatUnit {
     public Enemy(String name) {
         super(name);
     }
+
 }

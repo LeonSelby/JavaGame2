@@ -1,15 +1,23 @@
 package javagame2.entities.combatunits;
 
-import javagame2.GameUtility;
+import javagame2.Direction;
 import javagame2.Inventory;
 import javagame2.items.Item;
 import javagame2.items.armour.Armour;
+import javagame2.items.potions.Potion;
 import javagame2.items.weapons.Weapon;
 import lombok.Data;
+
+import static javagame2.Direction.*;
+import static javagame2.GameUtility.*;
+import static javagame2.TakeInput.*;
+
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
+
 
 
 @Data
@@ -30,12 +38,12 @@ public class Player extends CombatUnit {
     //Combat
     public void takeHpPotion() {
         if (this.getInventory().getListOfPotions().isEmpty()) {
-            GameUtility.printToConsole(GameUtility.noPotionsString());
-        }else if(this.getHealthMax() == this.getHealthCurrent()) {GameUtility.printToConsole(GameUtility.fullHealthString());
+            printToConsole(noPotionsString());
+        }else if(this.getHealthMax() == this.getHealthCurrent()) {printToConsole(fullHealthString());
         }else {
-            HealthPotion potion = this.getInventory().getListOfPotions().get(0);
+            Potion potion = this.getInventory().getListOfPotions().get(0);
             this.gainHP(potion.getRecoveryAmount());
-            this.getInventory().removePotionFromInventory(potion);
+            this.getInventory().removeItemFromInventory(potion);
         }
     }
 
@@ -44,20 +52,20 @@ public class Player extends CombatUnit {
         if (this.getInventory().checkIfCanAfford(item)){
             this.getInventory().addItemToInventory(item);
             this.getInventory().removeCoins(item.getCoinValue());
-        }else{GameUtility.printToConsole(GameUtility.notEnoughCoinsPurchaseString()); }
+        }else{printToConsole(notEnoughCoinsPurchaseString()); }
     }
 
     public void sell(Item item){
         if(this.getInventory().checkIfItemIsPresent(item)){
             this.getInventory().removeItemFromInventory(item);
             this.getInventory().addCoins(item.getCoinValue());
-        }else{GameUtility.printToConsole(GameUtility.cantSellItemNotInInvString()); }
+        }else{printToConsole(cantSellItemNotInInvString()); }
     }
 
-    //javagame2.Inventory
+    //Inventory
     public void equip(Armour armour){
         if(!this.getInventory().getListOfArmour().contains(armour)){
-            GameUtility.printToConsole(GameUtility.cantEquipArmourNotInInvString());
+            printToConsole(cantEquipArmourNotInInvString());
         }else {
             if (this.getEquippedArmour().isEmpty()) {
                 this.getEquippedArmour().add(armour);
@@ -74,7 +82,7 @@ public class Player extends CombatUnit {
 
     public void unequip(Armour armour){
         if(!this.getEquippedArmour().contains(armour)){
-            GameUtility.printToConsole(GameUtility.cantUnEquipArmourNotWearingString());
+            printToConsole(cantUnEquipArmourNotWearingString());
         }else{
             this.getInventory().getListOfArmour().add(armour);
             this.getEquippedArmour().remove(armour);
@@ -83,7 +91,7 @@ public class Player extends CombatUnit {
 
     public void wield(Weapon weapon){
         if(!this.getInventory().getListOfWeapons().contains(weapon)){
-            GameUtility.printToConsole(GameUtility.cantEquipWeaponNotInInvString());
+            printToConsole(cantEquipWeaponNotInInvString());
         }else{
             Weapon temp;
             if(this.getEquippedWeapon().isEmpty()){
@@ -99,7 +107,7 @@ public class Player extends CombatUnit {
 
     public void unWield(Weapon weapon){
         if(!this.getEquippedWeapon().contains(weapon)){
-            GameUtility.printToConsole(GameUtility.cantUnEquipWeaponNotWearingString());
+           printToConsole(cantUnEquipWeaponNotWearingString());
         }else{
             this.getInventory().getListOfWeapons().add(weapon);
             this.getEquippedWeapon().remove(weapon);
@@ -108,7 +116,7 @@ public class Player extends CombatUnit {
 
     //Move
     public Point attemptMove() {
-        Direction dir = TakeInput.requestMovementDirection(GameUtility.movementQuestionString());
+        Direction dir = requestMovementDirection(movementStringQuestion());
         Point attemptedDest = null;
         if (dir == Dir_NORTH){
             attemptedDest = new Point(this.location.x - 1, this.location.y);

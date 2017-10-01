@@ -1,5 +1,6 @@
 package javagame2;
 
+import javagame2.items.CoinBag;
 import javagame2.items.Item;
 import javagame2.items.armour.Armour;
 import javagame2.items.potions.Potion;
@@ -7,6 +8,7 @@ import javagame2.items.scrolls.Scroll;
 import javagame2.items.weapons.Weapon;
 import lombok.Data;
 
+import static javagame2.GameUtility.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,12 +23,24 @@ public class Inventory {
     private List<Scroll> listOfScrolls = new ArrayList<>(this.getCapacity());
 
 
-
     //Methods
     public void populatePlayersInventory() {
         Potion hpPot = new Potion(15);
         this.listOfPotions.add(hpPot);
         this.addCoins(50);
+    }
+
+    public boolean checkIfItemIsPresent(String name){
+       boolean ans = false;
+        for (Armour a : listOfArmour){
+            if (a.getName().equalsIgnoreCase(name)){ ans = true;} }
+        for (Weapon w : listOfWeapons){
+            if (w.getName().equalsIgnoreCase(name)){ ans = true;} }
+        for (Potion p : listOfPotions){
+            if (p.getName().equalsIgnoreCase(name)){ ans = true;} }
+        for (Scroll s : listOfScrolls){
+            if (s.getName().equalsIgnoreCase(name)){ ans = true;} }
+        return ans;
     }
 
     public boolean checkIfItemIsPresent(Item item) {
@@ -59,7 +73,7 @@ public class Inventory {
         return tmp;
     }
 
-    public boolean checkIfInventoryIsFull(Item item){
+    private boolean checkIfInventoryIsFull(Item item){
         boolean tmp = true;
         Item temp;
         try {
@@ -76,8 +90,33 @@ public class Inventory {
         return tmp;
     }
 
-    //Remove from Inventory
+    //Coins
+    public void addCoins(int amount) {
+        this.coinsInBag = this.getCoinsInBag() + amount;
+    }
 
+    public void removeCoins(int amount) {
+        if(amount >= this.getCoinsInBag()){
+            this.coinsInBag = 0;
+        }else{
+            this.coinsInBag = this.getCoinsInBag() - amount;
+        }
+    }
+
+    private boolean checkIfCanAfford(int needed){
+        return (this.getCoinsInBag()>=needed);
+    }
+
+    public boolean checkIfCanAfford(Item item){
+        int needed = item.getCoinValue();
+        return checkIfCanAfford(needed);
+    }
+
+    public void coinReport(){
+        printToConsole(coinReporter(this.getCoinsInBag()));
+    }
+
+    //Remove from Inventory
     public void removeItemFromInventory(Item item){
         if(item instanceof Armour){
             removeArmourFromInventory((Armour)item);
@@ -94,7 +133,7 @@ public class Inventory {
         try {
             this.listOfArmour.remove(armour);
         } catch (NullPointerException e) {
-            GameUtility.printToConsole(GameUtility.itemNotPresentString());
+            printToConsole(itemNotPresentString());
         }
     }
 
@@ -102,7 +141,7 @@ public class Inventory {
         try {
             this.listOfWeapons.remove(weapon);
         } catch (NullPointerException e) {
-            GameUtility.printToConsole(GameUtility.itemNotPresentString());
+            printToConsole(itemNotPresentString());
         }
     }
 
@@ -110,7 +149,7 @@ public class Inventory {
         try {
             this.listOfPotions.remove(potion);
         } catch (NullPointerException e) {
-            GameUtility.printToConsole(GameUtility.itemNotPresentString());
+            printToConsole(itemNotPresentString());
         }
     }
 
@@ -118,7 +157,37 @@ public class Inventory {
         try {
             this.listOfScrolls.remove(scroll);
         } catch (NullPointerException e) {
-            GameUtility.printToConsole(GameUtility.itemNotPresentString());
+            printToConsole(itemNotPresentString());
         }
     }
+
+    //Add to Inventory
+    private void addArmourToInventory(Armour item) {this.listOfArmour.add(item);}
+
+    private void addWeaponToInventory(Weapon item) {this.listOfWeapons.add(item);}
+
+    private void addPotionToInventory(Potion potion) {this.listOfPotions.add(potion); }
+
+    private void addScrollToInventory(Scroll scroll) { this.listOfScrolls.add(scroll); }
+
+    public void addItemToInventory(Item item) {
+        if(item instanceof CoinBag){
+            addCoins(((CoinBag) item).getAmountOfCoins());
+            printToConsole(addedToInventoryString(item));
+        }else if (!checkIfInventoryIsFull(item)) {
+            if (item instanceof Armour) {
+                addArmourToInventory((Armour) item);
+            } else if (item instanceof Weapon) {
+                addWeaponToInventory((Weapon) item);
+            } else if (item instanceof Potion) {
+                addPotionToInventory((Potion) item);
+            } else if (item instanceof Scroll) {
+                addScrollToInventory((Scroll) item);
+            }
+            printToConsole(addedToInventoryString(item));
+        }else{
+            printToConsole(inventoryIsFullString());
+        }
+    }
+
 }

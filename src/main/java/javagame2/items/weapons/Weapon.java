@@ -4,5 +4,11 @@ import javagame2.items.Item;
 import lombok.Data;
 
 @Data
-public class Weapon extends Item {
+abstract public class Weapon extends Item {
+    private int AtkRating;
+
+    public Weapon(String name, int coinValue, int atkRating) {
+        super(name, coinValue);
+        this.AtkRating = atkRating;
+    }
 }

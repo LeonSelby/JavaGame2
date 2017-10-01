@@ -4,6 +4,7 @@ import javagame2.GameUtility;
 import javagame2.entities.Entity;
 import lombok.Data;
 
+import static javagame2.GameUtility.*;
 
 import java.util.Random;
 
@@ -59,24 +60,25 @@ abstract public class CombatUnit extends Entity {
         this.setDefRatingBase(getDefRatingBase() + 2);
         this.setHealthMax(this.getHealthMax() + 10);
         this.setHealthCurrent(this.getHealthCurrent() + 10);
+printToConsole(levelUpString());
     }
 
     public void attack(CombatUnit target){
         int attackersAtkRating = this.getAtkRating();
         int defendersDefRating = target.getDefRating();
         if(this.determineIfCrit(this.getCritChance())){
-            GameUtility.printToConsole(GameUtility.critSuccessString());
+            printToConsole(critSuccessString());
             attackersAtkRating += attackersAtkRating;
         }else if(target.determineIfDodge(this.getDodgeChance())){
-            GameUtility.printToConsole(GameUtility.dodgeSuccessString());
+            printToConsole(dodgeSuccessString());
             attackersAtkRating = 0;
         }else if(this.determineIfBlock(this.getBlockChance())){
-            GameUtility.printToConsole(GameUtility.blockSuccessString());
+            printToConsole(blockSuccessString());
             defendersDefRating = defendersDefRating + (defendersDefRating/2);
         }
         int damage = attackersAtkRating - defendersDefRating;
         target.loseHP(damage);
-        GameUtility.printToConsole(GameUtility.declareDMG(damage, target));
+        printToConsole(declareDMG(damage, target));
     }
 
     //Determine Methods
