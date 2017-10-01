@@ -19,14 +19,16 @@ public class Game {
     private Boss tyrant = new Boss("Tyrant", 1000, 30, 30);
     private Boss werewolf = new Boss("Werewolf", 900, 20, 10);
     private GameUtility gameUtils = new GameUtility();
-    private Player player1 = new Player("Leon");
+    private Player player1 = new Player();
     private Board board = new Board(12, player1);
     private Board unalteredBoard = new Board(12, player1);
     private Vendor shop = new Vendor(false);
     private Vendor merchant = new Vendor(true);
     private int deadBosses = 0;
+    private int combatChance = 20;
 
     public Game() {
+        printToConsole(welcomeToGameString());
         werewolf.setNumberOfAttacks(3);
         werewolf.setDodgeChance(0);
         tyrant.setCritChance(25);
@@ -106,7 +108,7 @@ public class Game {
     private void checkIfCombatSpawns(int targetTile) {
         Random random = new Random();
         int n = random.nextInt(10) + 1;
-        if(n>8) {
+        if(n > (100 - combatChance)) {
             if (targetTile == 3) {
                 Battle battle = new Battle(player1, false);
                 battle.randomBattle();

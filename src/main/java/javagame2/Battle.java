@@ -21,6 +21,12 @@ public class Battle {
     private Boss boss;
 
     //Constructor
+    public Battle(Player player1) {
+        this.player = player1;
+        this.enemy = determineEnemy(false);
+        this.player.setInCombat(true);
+    }
+
     public Battle(Player player1, boolean hard) {
         this.player = player1;
         this.enemy = determineEnemy(hard);

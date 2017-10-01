@@ -114,7 +114,12 @@ public class GameUtility {
     }
 
     //Strings
+    //Meta
+    public static String welcomeToGameString(){return "Welcome to BarronMoore! Defeat the two bosses to win the game!";}
+
     //Character
+    public static String askForNameString(){return "What is your name?";}
+
     public static String levelUpString(){return "You have gained a level! Ratings have increased by 2, and health by 20!";}
 
     public static String presentOptions(){

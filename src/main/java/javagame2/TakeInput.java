@@ -11,7 +11,7 @@ public class TakeInput {
     static public Scanner sc = new Scanner(System.in);
 
     //Input
-    static private String takeNextLine() {
+    static public String takeNextLine() {
         return sc.nextLine();
     }
 

@@ -30,11 +30,14 @@ public class Player extends CombatUnit {
     private Point prevLocation;
 
     //Constructor
-    public Player(String name) {
-        super(name);
+    public Player() {
+        super("Placeholder");
+        printToConsole(askForNameString());
+        String name = takeNextLine();
+        this.setName(name);
         this.getInventory().populatePlayersInventory();
-        this.setHealthMax(75);
-        this.setHealthCurrent(75);
+        this.setHealthMax(40);
+        this.setHealthCurrent(40);
         this.location = new Point(10, 1);
         this.prevLocation = new Point(10, 1);
     }
@@ -162,8 +165,8 @@ public class Player extends CombatUnit {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "experiencePoints=" + experiencePoints +
+        return this.getName() +
+                ": experiencePoints=" + experiencePoints +
                 ", level=" + this.getLevel() +
                 ", attack Rating=" + this.getAtkRating() +
                 ", defense Rating=" + this.getDefRating() +

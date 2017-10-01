@@ -15,3 +15,13 @@ public class Main {
         }
     }
 }
+
+
+//Add Noticeboard with option to view the map and legend
+//Add inventory interaction menus
+//Add items to each shop
+//Add shop menu
+//Set boss stats
+//Possibly change chests to not give gold.
+//Add finding gold or poor items on floor.
+
