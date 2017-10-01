@@ -1,8 +1,15 @@
-package entities.combatunits;
+package javagame2.entities.combatunits;
 
+import javagame2.GameUtility;
+import javagame2.Inventory;
+import javagame2.items.Item;
+import javagame2.items.armour.Armour;
+import javagame2.items.weapons.Weapon;
 import lombok.Data;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 
 @Data
@@ -17,6 +24,7 @@ public class Player extends CombatUnit {
     //Constructor
     public Player(String name) {
         super(name);
+        this.getInventory().populatePlayersInventory();
     }
     //Methods
     //Combat
@@ -46,7 +54,7 @@ public class Player extends CombatUnit {
         }else{GameUtility.printToConsole(GameUtility.cantSellItemNotInInvString()); }
     }
 
-    //Inventory
+    //javagame2.Inventory
     public void equip(Armour armour){
         if(!this.getInventory().getListOfArmour().contains(armour)){
             GameUtility.printToConsole(GameUtility.cantEquipArmourNotInInvString());
@@ -98,7 +106,30 @@ public class Player extends CombatUnit {
         }
     }
 
+    //Move
+    public Point attemptMove() {
+        Direction dir = TakeInput.requestMovementDirection(GameUtility.movementQuestionString());
+        Point attemptedDest = null;
+        if (dir == Dir_NORTH){
+            attemptedDest = new Point(this.location.x - 1, this.location.y);
+        }else if(dir == Dir_EAST){
+            attemptedDest = new Point(this.location.x, this.location.y + 1);
+        }else if(dir == Dir_SOUTH){
+            attemptedDest = new Point(this.location.x + 1, this.location.y);
+        }else if(dir == Dir_WEST){
+            attemptedDest = new Point(this.location.x, this.location.y - 1);
+        }
+        return attemptedDest;
+    }
 
+    //Level
+    public void checkIfShouldLevelUp(){
+        if(this.getLevel() < 10){
+            if(this.getLevel() < Math.ceil(this.getExperiencePoints()%100)){
+            this.levelUp();
+            this.checkIfShouldLevelUp();
+        }}
+    }
 
     //Override CombatUnit
     @Override

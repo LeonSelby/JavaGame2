@@ -1,4 +1,4 @@
-package entities;
+package javagame2.entities;
 
 import lombok.Data;
 

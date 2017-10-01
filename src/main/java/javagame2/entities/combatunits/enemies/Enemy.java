@@ -1,6 +1,6 @@
-package entities.combatunits.enemies;
+package javagame2.entities.combatunits.enemies;
 
-import entities.combatunits.CombatUnit;
+import javagame2.entities.combatunits.CombatUnit;
 import lombok.Data;
 
 @Data

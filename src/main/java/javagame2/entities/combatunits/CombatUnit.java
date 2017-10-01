@@ -1,7 +1,9 @@
-package entities.combatunits;
+package javagame2.entities.combatunits;
 
-import entities.Entity;
+import javagame2.GameUtility;
+import javagame2.entities.Entity;
 import lombok.Data;
+
 
 import java.util.Random;
 
@@ -53,6 +55,10 @@ abstract public class CombatUnit extends Entity {
 
     public void levelUp() {
         this.setLevel(this.getLevel() + 1);
+        this.setAtkRatingBase(getAtkRatingBase() + 2);
+        this.setDefRatingBase(getDefRatingBase() + 2);
+        this.setHealthMax(this.getHealthMax() + 10);
+        this.setHealthCurrent(this.getHealthCurrent() + 10);
     }
 
     public void attack(CombatUnit target){
