@@ -25,14 +25,16 @@ public class GameUtility {
         this.listOfUnMoveableTiles.add(-1);
         this.listOfUnMoveableTiles.add(1);
         this.listOfUnMoveableTiles.add(2);
-        this.listOfUnMoveableTiles.add(6);
-        this.listOfUnMoveableTiles.add(10);
         this.listOfUnMoveableTiles.add(5);
+        this.listOfUnMoveableTiles.add(6);
+        this.listOfUnMoveableTiles.add(8);
+        this.listOfUnMoveableTiles.add(10);
 
         this.listOfInteractiveTiles.add(1);
         this.listOfInteractiveTiles.add(2);
         this.listOfInteractiveTiles.add(5);
         this.listOfInteractiveTiles.add(6);
+        this.listOfInteractiveTiles.add(8);
         this.listOfInteractiveTiles.add(10);
     }
 
@@ -117,14 +119,21 @@ public class GameUtility {
     //Meta
     public static String welcomeToGameString(){return "Welcome to BarronMoore! Defeat the two bosses to win the game!";}
 
-    //Character
+    public static String noticeBoardAheadString(){return "A noticeboard is to the East, take a look to get a lay of the land!";}
+
+  public static String presentNoticeboardOptions(){return "Which part of the noticeboard would you like to see? \n" +
+          " 1. Map \n 2. Map legend \n 3. Walk Away.";}
+
+    public static String mapLegendString(){return " X: Barrier. C: Chest. S: Shop \n M: Danger! W: Danger+! +:Strange Obelisk \n" +
+            " B: Boss N: Noticeboard R:Rare Chest U: You!";}
+          //Character
     public static String askForNameString(){return "What is your name?";}
 
     public static String levelUpString(){return "You have gained a level! Ratings have increased by 2, and health by 20!";}
 
     public static String presentOptions(){
         return "What would you like to do?" + "\n 1. Move. \n 2. See Map.\n" +
-                " 3. See Equipped Items. \n 4. See Inventory. \n 5. Take Potion. \n 6. See statistics.";}
+                " 3. See Equipped Items. \n 4. See Inventory. \n 5. Take Potion. \n 6. See Statistics.";}
 
     public static String noMapString(){return "You don't own a Map!";}
 
@@ -212,6 +221,8 @@ public class GameUtility {
             tile = "Boss";
         }else if(targetTile == 6){
             tile = "Obelisk";
+        }else if (targetTile == 8){
+            tile = "Noticeboard";
         }else if(targetTile == 10){
             tile = "Large Chest";
         }

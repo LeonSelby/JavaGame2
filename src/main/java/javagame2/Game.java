@@ -13,6 +13,8 @@ import java.awt.*;
 import java.util.Random;
 
 import static javagame2.GameUtility.*;
+import static javagame2.TakeInput.*;
+
 
 @Data
 public class Game {
@@ -28,10 +30,11 @@ public class Game {
     private int combatChance = 20;
 
     public Game() {
-        printToConsole(welcomeToGameString());
         werewolf.setNumberOfAttacks(3);
         werewolf.setDodgeChance(0);
         tyrant.setCritChance(25);
+        printToConsole(welcomeToGameString());
+        printToConsole(noticeBoardAheadString());
     }
 
     public void takeTurn(){
@@ -40,14 +43,11 @@ public class Game {
             movePlayer();
         }else if(ans == 2){
             if(player1.getInventory().checkIfItemIsPresent("map")){board.printBoard();}
+            else if( player1.getInventory().checkIfItemIsPresent("True Map")){board.printTrueBoard();}
             else{printToConsole(noMapString());}
         }else if(ans == 3){
-            for (Weapon w: player1.getEquippedWeapon()) {
-                System.out.println(w.toString());
-            }
-            for (Armour a: player1.getEquippedArmour()) {
-                System.out.println(a.toString());
-            }
+            for (Weapon w: player1.getEquippedWeapon()) {printToConsole(w.toString()); }
+            for (Armour a: player1.getEquippedArmour()) {printToConsole(a.toString()); }
         }else if(ans == 4){
             player1.getInventory().open();
         }else if(ans == 5){
@@ -79,6 +79,8 @@ public class Game {
                         depleteTile(targetLoc);
                     }else if(targetTile == 6) {
                         printToConsole("Buffs not yet added!");
+                    }else if(targetTile == 8) {
+                        openNoticeboard();
                     }else if(targetTile == 9){
                         printToConsole("That " + tile + " has already been spent!");
                     }else if(targetTile == 10){
@@ -118,6 +120,21 @@ public class Game {
             }
         }
     }
+
+    private void openNoticeboard(){
+        int ans = requestInputInRange(presentNoticeboardOptions(), 3);
+        switch (ans){
+            case 1:
+                board.printBoard();
+                break;
+            case 2:
+                printToConsole(mapLegendString());
+                break;
+            case 3:
+                break;
+        }
+    }
+
 
     private void depleteTile(Point targetLoc){
         board.getBoardArray()[targetLoc.x][targetLoc.y] = 9;

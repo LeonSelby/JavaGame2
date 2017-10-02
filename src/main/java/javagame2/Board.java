@@ -55,8 +55,11 @@ public class Board {
                 if((r == 2 && c == 6) || (r == 10 && c == 9)){
                     board[r][c] = 7;//Boss Warning
                 }
-                if(r ==1 && c == 10){
+                if(r == 1 && c == 10){
                     board[r][c] = 10;//Ultra Chest
+                }
+                if(r == 10 && c == 2 ){
+                    board[r][c] = 8;
                 }
             }
         }
@@ -73,7 +76,7 @@ public class Board {
                 [intValue(player.getLocation().getY())] = 14;
     }
 
-    public void resetTile(){
+    private void resetTile(){
         boardArray[intValue(player.getPrevLocation().getX())]
                 [intValue(player.getPrevLocation().getY())]
                 = pureBoard[intValue(player.getPrevLocation().getX())]
@@ -102,7 +105,9 @@ public class Board {
                     System.out.print(" " + "M");
                 } else if (boardArray[r][c] == 7) {
                     System.out.print(" " + " ");
-                }else if(boardArray[r][c] == 9){
+                } else if (boardArray[r][c] == 8) {
+                    System.out.print(" " + "N");
+                } else if(boardArray[r][c] == 9){
                     System.out.print(" " + " ");
                 } else if (boardArray[r][c] == 10) {
                     System.out.print(" " + "M");
@@ -130,14 +135,16 @@ public class Board {
                 } else if (boardArray[r][c] == 3) {
                     System.out.print(" " + "M");
                 } else if (boardArray[r][c] == 4) {
-                    System.out.print(" " + "W"); //CHANGE TO M
+                    System.out.print(" " + "W");
                 } else if (boardArray[r][c] == 5) {
                     System.out.print(" " + "B");
                 } else if (boardArray[r][c] == 6) {
                     System.out.print(" " + "+");
                 } else if (boardArray[r][c] == 7) {
                     System.out.print(" " + " ");
-                }else if(boardArray[r][c] == 9){
+                } else if (boardArray[r][c] == 8) {
+                    System.out.print(" " + "N");
+                } else if(boardArray[r][c] == 9){
                     System.out.print(" " + " ");
                 } else if (boardArray[r][c] == 10) {
                     System.out.print(" " + "R");

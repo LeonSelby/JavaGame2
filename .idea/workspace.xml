@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95414404-ada5-4b75-9c48-1b78b4af9cd4" name="Default" comment="Battle Spawning and end game conditions added&#10;Need Inventory, Shop interaction.">
+    <list default="true" id="95414404-ada5-4b75-9c48-1b78b4af9cd4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/javagame2/Battle.java" afterPath="$PROJECT_DIR$/src/main/java/javagame2/Battle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/javagame2/Board.java" afterPath="$PROJECT_DIR$/src/main/java/javagame2/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/javagame2/Game.java" afterPath="$PROJECT_DIR$/src/main/java/javagame2/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/javagame2/GameUtility.java" afterPath="$PROJECT_DIR$/src/main/java/javagame2/GameUtility.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/javagame2/Main.java" afterPath="$PROJECT_DIR$/src/main/java/javagame2/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/javagame2/TakeInput.java" afterPath="$PROJECT_DIR$/src/main/java/javagame2/TakeInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/Player.java" afterPath="$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/javagame2/items/scrolls/Map.java" afterPath="$PROJECT_DIR$/src/main/java/javagame2/items/scrolls/Map.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,27 +28,14 @@
           <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                <state relative-caret-position="-397">
+                  <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="method#takeTurn#0;class#Game#0" expanded="false" />
-                    <element signature="method#movePlayer#0;class#Game#0" expanded="false" />
                     <element signature="method#checkForMessage#0;class#Game#0" expanded="false" />
                     <element signature="method#checkIfCombatSpawns#0;class#Game#0" expanded="false" />
+                    <element signature="method#openNoticeboard#0;class#Game#0" expanded="false" />
                     <element signature="method#depleteTile#0;class#Game#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Vendor.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/entities/vendors/Vendor.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -58,9 +44,38 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="323">
+                  <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/items/scrolls/Map.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#113#114#0" expanded="true" />
+                    <element signature="e#149#150#0" expanded="true" />
+                    <element signature="e#184#185#0" expanded="true" />
+                    <element signature="e#225#226#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Board.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1137">
+                  <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -69,7 +84,7 @@
             <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Inventory.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="799">
-                  <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+                  <caret line="90" column="5" lean-forward="false" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#populatePlayersInventory#0;class#Inventory#0" expanded="false" />
@@ -88,45 +103,15 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Sword.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/items/weapons/Sword.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#252#253#0" expanded="true" />
-                    <element signature="e#341#342#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CombatUnit.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/CombatUnit.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="343">
-                  <caret line="56" column="27" lean-forward="true" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#loseHP#0;class#CombatUnit#0" expanded="false" />
-                    <element signature="method#gainHP#0;class#CombatUnit#0" expanded="false" />
-                    <element signature="method#determineIfCrit#0;class#CombatUnit#0" expanded="false" />
-                    <element signature="method#determineIfBlock#0;class#CombatUnit#0" expanded="false" />
-                    <element signature="method#determineIfDodge#0;class#CombatUnit#0" expanded="false" />
-                    <element signature="method#toString#0;class#CombatUnit#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="GameUtility.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/GameUtility.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="259">
-                  <caret line="20" column="68" lean-forward="false" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+                <state relative-caret-position="361">
+                  <caret line="128" column="21" lean-forward="true" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#determineItemLoot#0;class#GameUtility#0" expanded="false" />
+                    <element signature="method#presentOptions#0;class#GameUtility#0" expanded="false" />
                     <element signature="method#optionsString#0;class#GameUtility#0" expanded="false" />
                     <element signature="method#hpDeclarations#0;class#GameUtility#0" expanded="false" />
                     <element signature="method#declareHPLoss#0;class#GameUtility#0" expanded="false" />
@@ -139,12 +124,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="GameUtility.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/GameUtility.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="572">
-                  <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+                <state relative-caret-position="302">
+                  <caret line="125" column="0" lean-forward="true" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#determineItemLoot#0;class#GameUtility#0" expanded="false" />
@@ -157,11 +142,35 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/Player.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="221">
+                  <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#671#679#0" expanded="true" />
+                    <element signature="e#740#748#0" expanded="true" />
+                    <element signature="method#takeHpPotion#0;class#Player#0" expanded="false" />
+                    <element signature="method#buy#0;class#Player#0" expanded="false" />
+                    <element signature="method#sell#0;class#Player#0" expanded="false" />
+                    <element signature="method#equip#0;class#Player#0" expanded="false" />
+                    <element signature="method#unequip#0;class#Player#0" expanded="false" />
+                    <element signature="method#wield#0;class#Player#0" expanded="false" />
+                    <element signature="method#unWield#0;class#Player#0" expanded="false" />
+                    <element signature="method#attemptMove#0;class#Player#0" expanded="false" />
+                    <element signature="method#getAtkRating#0;class#Player#0" expanded="false" />
+                    <element signature="method#getDefRating#0;class#Player#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="Weapon.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/items/weapons/Weapon.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+                <state relative-caret-position="323">
+                  <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -225,22 +234,22 @@
         <option value="$PROJECT_DIR$/src/main/java/javagame2/items/armour/Leggings.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/items/armour/Armour.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/items/scrolls/Scroll.java" />
-        <option value="$PROJECT_DIR$/src/main/java/javagame2/items/scrolls/Map.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/items/scrolls/InstructionManual.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/enemies/Enemy.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/enemies/Boss.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/entities/vendors/Vendor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/javagame2/Board.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/Inventory.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/items/weapons/Weapon.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/items/CoinBag.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/CombatUnit.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/items/weapons/Sword.java" />
-        <option value="$PROJECT_DIR$/src/main/java/javagame2/GameUtility.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/TakeInput.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/Battle.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/javagame2/items/scrolls/Map.java" />
+        <option value="$PROJECT_DIR$/src/main/java/javagame2/Board.java" />
+        <option value="$PROJECT_DIR$/src/main/java/javagame2/GameUtility.java" />
         <option value="$PROJECT_DIR$/src/main/java/javagame2/Main.java" />
       </list>
     </option>
@@ -282,6 +291,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -342,17 +353,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="javagame2" type="462c0819:PsiDirectoryNode" />
               <item name="entities" type="462c0819:PsiDirectoryNode" />
-              <item name="combatunits" type="462c0819:PsiDirectoryNode" />
-              <item name="enemies" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javagame2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javagame2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="javagame2" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
               <item name="vendors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -368,45 +368,13 @@
               <item name="javagame2" type="b2602c69:ProjectViewProjectNode" />
               <item name="javagame2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="javagame2" type="462c0819:PsiDirectoryNode" />
-              <item name="items" type="462c0819:PsiDirectoryNode" />
-              <item name="armour" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javagame2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javagame2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="javagame2" type="462c0819:PsiDirectoryNode" />
-              <item name="items" type="462c0819:PsiDirectoryNode" />
-              <item name="scrolls" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javagame2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javagame2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="javagame2" type="462c0819:PsiDirectoryNode" />
-              <item name="items" type="462c0819:PsiDirectoryNode" />
-              <item name="weapons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javagame2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javagame2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -556,7 +524,8 @@
       <option name="presentableId" value="Default" />
       <updated>1506872033480</updated>
       <workItem from="1506872038504" duration="187000" />
-      <workItem from="1506872346903" duration="23349000" />
+      <workItem from="1506872346903" duration="23374000" />
+      <workItem from="1506923698111" duration="4009000" />
     </task>
     <task id="LOCAL-00001" summary="second commit, rebuilding structure">
       <created>1506883701510</created>
@@ -579,11 +548,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506895778104</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="//Add Noticeboard with option to view the map and legend&#10;//Add inventory interaction menus&#10;//Add items to each shop&#10;//Add shop menu&#10;//Set boss stats&#10;//Possibly change chests to not give gold.&#10;//Add finding gold or poor items on floor.">
+      <created>1506897071882</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1506897071882</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23536000" />
+    <option name="totallyTimeSpent" value="27570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -591,7 +567,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905138" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905138" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -605,7 +581,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.128125" sideWeight="0.4877551" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4556331" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -617,6 +592,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4556331" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,7 +605,8 @@
     <MESSAGE value="second commit, rebuilding structure" />
     <MESSAGE value="Structure finished,&#10;Need to finish Game Class, add to Strings to items, add battle spawning, and shop interactions, and inventory interaction." />
     <MESSAGE value="Battle Spawning and end game conditions added&#10;Need Inventory, Shop interaction." />
-    <option name="LAST_COMMIT_MESSAGE" value="Battle Spawning and end game conditions added&#10;Need Inventory, Shop interaction." />
+    <MESSAGE value="//Add Noticeboard with option to view the map and legend&#10;//Add inventory interaction menus&#10;//Add items to each shop&#10;//Add shop menu&#10;//Set boss stats&#10;//Possibly change chests to not give gold.&#10;//Add finding gold or poor items on floor." />
+    <option name="LAST_COMMIT_MESSAGE" value="//Add Noticeboard with option to view the map and legend&#10;//Add inventory interaction menus&#10;//Add items to each shop&#10;//Add shop menu&#10;//Set boss stats&#10;//Possibly change chests to not give gold.&#10;//Add finding gold or poor items on floor." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -638,6 +615,114 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#checkForMessage#0;class#Game#0" expanded="false" />
+            <element signature="method#checkIfCombatSpawns#0;class#Game#0" expanded="false" />
+            <element signature="method#openNoticeboard#0;class#Game#0" expanded="false" />
+            <element signature="method#depleteTile#0;class#Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/entities/vendors/Vendor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#populatePlayersInventory#0;class#Inventory#0" expanded="false" />
+            <element signature="method#checkIfItemIsPresent#0;class#Inventory#0" expanded="false" />
+            <element signature="method#checkIfItemIsPresent#1;class#Inventory#0" expanded="false" />
+            <element signature="method#removeCoins#0;class#Inventory#0" expanded="false" />
+            <element signature="method#checkIfCanAfford#1;class#Inventory#0" expanded="false" />
+            <element signature="method#removeItemFromInventory#0;class#Inventory#0" expanded="false" />
+            <element signature="method#removeArmourFromInventory#0;class#Inventory#0" expanded="false" />
+            <element signature="method#removeWeaponFromInventory#0;class#Inventory#0" expanded="false" />
+            <element signature="method#removePotionFromInventory#0;class#Inventory#0" expanded="false" />
+            <element signature="method#removeScrollFromInventory#0;class#Inventory#0" expanded="false" />
+            <element signature="method#addItemToInventory#0;class#Inventory#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/items/weapons/Sword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/CombatUnit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="56" column="27" lean-forward="true" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loseHP#0;class#CombatUnit#0" expanded="false" />
+            <element signature="method#gainHP#0;class#CombatUnit#0" expanded="false" />
+            <element signature="method#determineIfCrit#0;class#CombatUnit#0" expanded="false" />
+            <element signature="method#determineIfBlock#0;class#CombatUnit#0" expanded="false" />
+            <element signature="method#determineIfDodge#0;class#CombatUnit#0" expanded="false" />
+            <element signature="method#toString#0;class#CombatUnit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/GameUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="20" column="68" lean-forward="false" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#determineItemLoot#0;class#GameUtility#0" expanded="false" />
+            <element signature="method#presentOptions#0;class#GameUtility#0" expanded="false" />
+            <element signature="method#optionsString#0;class#GameUtility#0" expanded="false" />
+            <element signature="method#hpDeclarations#0;class#GameUtility#0" expanded="false" />
+            <element signature="method#declareHPLoss#0;class#GameUtility#0" expanded="false" />
+            <element signature="method#determineTargetTile#0;class#GameUtility#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/items/weapons/Weapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -654,14 +739,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/entities/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -760,9 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -781,8 +856,8 @@
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="e#192#193#0" expanded="true" />
+            <element signature="e#140#141#0" expanded="false" />
+            <element signature="e#192#193#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -815,28 +890,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/items/scrolls/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="965">
-          <caret line="61" column="9" lean-forward="true" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/items/weapons/Weapon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -856,8 +913,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/CombatUnit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="56" column="27" lean-forward="true" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+        <state relative-caret-position="646">
+          <caret line="56" column="27" lean-forward="false" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#loseHP#0;class#CombatUnit#0" expanded="false" />
@@ -872,8 +929,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/items/weapons/Sword.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#252#253#0" expanded="true" />
             <element signature="e#341#342#0" expanded="true" />
@@ -883,47 +940,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/entities/vendors/Vendor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="51">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/GameUtility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="20" column="68" lean-forward="false" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#determineItemLoot#0;class#GameUtility#0" expanded="false" />
-            <element signature="method#optionsString#0;class#GameUtility#0" expanded="false" />
-            <element signature="method#hpDeclarations#0;class#GameUtility#0" expanded="false" />
-            <element signature="method#declareHPLoss#0;class#GameUtility#0" expanded="false" />
-            <element signature="method#determineTargetTile#0;class#GameUtility#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1115">
-          <caret line="163" column="5" lean-forward="true" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#671#679#0" expanded="true" />
-            <element signature="e#740#748#0" expanded="true" />
-            <element signature="method#takeHpPotion#0;class#Player#0" expanded="false" />
-            <element signature="method#buy#0;class#Player#0" expanded="false" />
-            <element signature="method#sell#0;class#Player#0" expanded="false" />
-            <element signature="method#equip#0;class#Player#0" expanded="false" />
-            <element signature="method#unequip#0;class#Player#0" expanded="false" />
-            <element signature="method#wield#0;class#Player#0" expanded="false" />
-            <element signature="method#unWield#0;class#Player#0" expanded="false" />
-            <element signature="method#attemptMove#0;class#Player#0" expanded="false" />
-            <element signature="method#getAtkRating#0;class#Player#0" expanded="false" />
-            <element signature="method#getDefRating#0;class#Player#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -962,25 +982,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#takeTurn#0;class#Game#0" expanded="false" />
-            <element signature="method#movePlayer#0;class#Game#0" expanded="false" />
-            <element signature="method#checkForMessage#0;class#Game#0" expanded="false" />
-            <element signature="method#checkIfCombatSpawns#0;class#Game#0" expanded="false" />
-            <element signature="method#depleteTile#0;class#Game#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
-          <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+          <caret line="90" column="5" lean-forward="false" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#populatePlayersInventory#0;class#Inventory#0" expanded="false" />
@@ -998,11 +1003,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/entities/combatunits/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#671#679#0" expanded="true" />
+            <element signature="e#740#748#0" expanded="true" />
+            <element signature="method#takeHpPotion#0;class#Player#0" expanded="false" />
+            <element signature="method#buy#0;class#Player#0" expanded="false" />
+            <element signature="method#sell#0;class#Player#0" expanded="false" />
+            <element signature="method#equip#0;class#Player#0" expanded="false" />
+            <element signature="method#unequip#0;class#Player#0" expanded="false" />
+            <element signature="method#wield#0;class#Player#0" expanded="false" />
+            <element signature="method#unWield#0;class#Player#0" expanded="false" />
+            <element signature="method#attemptMove#0;class#Player#0" expanded="false" />
+            <element signature="method#getAtkRating#0;class#Player#0" expanded="false" />
+            <element signature="method#getDefRating#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/items/scrolls/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#113#114#0" expanded="true" />
+            <element signature="e#149#150#0" expanded="true" />
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1137">
+          <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/GameUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="128" column="21" lean-forward="true" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#determineItemLoot#0;class#GameUtility#0" expanded="false" />
+            <element signature="method#presentOptions#0;class#GameUtility#0" expanded="false" />
+            <element signature="method#optionsString#0;class#GameUtility#0" expanded="false" />
+            <element signature="method#hpDeclarations#0;class#GameUtility#0" expanded="false" />
+            <element signature="method#declareHPLoss#0;class#GameUtility#0" expanded="false" />
+            <element signature="method#determineTargetTile#0;class#GameUtility#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-397">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#checkForMessage#0;class#Game#0" expanded="false" />
+            <element signature="method#checkIfCombatSpawns#0;class#Game#0" expanded="false" />
+            <element signature="method#openNoticeboard#0;class#Game#0" expanded="false" />
+            <element signature="method#depleteTile#0;class#Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/javagame2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="323">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
