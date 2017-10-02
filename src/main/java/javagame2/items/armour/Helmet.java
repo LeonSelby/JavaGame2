@@ -13,5 +13,15 @@ public class Helmet extends Armour {
     }
 
     //Methods
-    private boolean checkIfTrapsAreNegated(){return this.trapProtection == 100;}
+    private boolean checkIfTrapsAreNegated() {
+        return this.trapProtection == 100;
+    }
+
+    public String toString() {
+        return this.getName() +
+                " value=" + this.getCoinValue() +
+                ", def rating= " + this.getDefRating() +
+                ", negatesTraps=" + negatesTraps +
+                '}';
+    }
 }

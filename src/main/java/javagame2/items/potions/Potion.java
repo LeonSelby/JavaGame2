@@ -12,4 +12,11 @@ public class Potion extends Item {
         super("Potion", 15);
         this.recoveryAmount = recoveryAmount;
     }
+
+    public String toString() {
+        return this.getName() +
+                " value=" + this.getCoinValue() +
+                ", recovery amount= " + this.getRecoveryAmount() +
+                '}';
+    }
 }

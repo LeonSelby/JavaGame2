@@ -15,4 +15,13 @@ public class Boots extends Armour {
 
     //Methods
     private boolean checkIfTrapsAreNegated(){return this.trapProtection == 100;}
+
+    @Override
+    public String toString() {
+        return this.getName() +
+                " value=" + this.getCoinValue() +
+                ", def rating= " + this.getDefRating() +
+                ", negatesTraps=" + negatesTraps +
+        '}';
+    }
 }
