@@ -27,6 +27,7 @@ public class Main {
 //Add Noticeboard with option to view the map and legend DONE
 //toString on Everything! simple done, beautify needed
 //Add inventory interaction menus
+//Add Potion taking reporting.
 //Add items to each shop
 //Add shop menu
 //Set boss stats

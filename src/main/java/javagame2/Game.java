@@ -27,7 +27,7 @@ public class Game {
     private Vendor shop = new Vendor(false);
     private Vendor merchant = new Vendor(true);
     private int deadBosses = 0;
-    private int combatChance = 20;
+    private int combatChance = 33;
 
     public Game() {
         werewolf.setNumberOfAttacks(3);
@@ -109,7 +109,7 @@ public class Game {
 
     private void checkIfCombatSpawns(int targetTile) {
         Random random = new Random();
-        int n = random.nextInt(10) + 1;
+        int n = random.nextInt(100) + 1;
         if(n > (100 - combatChance)) {
             if (targetTile == 3) {
                 Battle battle = new Battle(player1, false);

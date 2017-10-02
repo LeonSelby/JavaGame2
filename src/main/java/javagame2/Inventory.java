@@ -27,21 +27,35 @@ public class Inventory {
 
     //Methods
     public void populatePlayersInventory() {
-        Potion hpPot = new Potion(15);
+        Potion hpPot = new Potion(20);
         this.listOfPotions.add(hpPot);
         this.addCoins(50);
     }
 
-    public boolean checkIfItemIsPresent(String name){
-       boolean ans = false;
-        for (Armour a : listOfArmour){
-            if (a.getName().equalsIgnoreCase(name)){ ans = true;} }
-        for (Weapon w : listOfWeapons){
-            if (w.getName().equalsIgnoreCase(name)){ ans = true;} }
-        for (Potion p : listOfPotions){
-            if (p.getName().equalsIgnoreCase(name)){ ans = true;} }
-        for (Scroll s : listOfScrolls){
-            if (s.getName().equalsIgnoreCase(name)){ ans = true;} }
+
+    //Checks
+    public boolean checkIfItemIsPresent(String name) {
+        boolean ans = false;
+        for (Armour a : listOfArmour) {
+            if (a.getName().equalsIgnoreCase(name)) {
+                ans = true;
+            }
+        }
+        for (Weapon w : listOfWeapons) {
+            if (w.getName().equalsIgnoreCase(name)) {
+                ans = true;
+            }
+        }
+        for (Potion p : listOfPotions) {
+            if (p.getName().equalsIgnoreCase(name)) {
+                ans = true;
+            }
+        }
+        for (Scroll s : listOfScrolls) {
+            if (s.getName().equalsIgnoreCase(name)) {
+                ans = true;
+            }
+        }
         return ans;
     }
 
@@ -75,67 +89,105 @@ public class Inventory {
         return tmp;
     }
 
-    private boolean checkIfInventoryIsFull(Item item){
+    private boolean checkIfArmourIsFull() {
         boolean tmp = true;
-        Item temp;
+        Armour temp;
         try {
-            if (item instanceof Armour) {
-                temp = listOfArmour.get(19);
-            } else if (item instanceof Weapon) {
-                temp =listOfWeapons.get(19);
-            } else if (item instanceof Potion) {
-                temp = listOfPotions.get(19);
-            } else if (item instanceof Scroll) {
-                temp =listOfScrolls.get(19);
-            }
-        }catch (IndexOutOfBoundsException e){ tmp = false; }
+            temp = listOfArmour.get(getCapacity() - 1);
+        } catch (IndexOutOfBoundsException e) {
+            tmp = false;
+        }
         return tmp;
     }
 
-    private boolean checkIfInventoryIsFull(List<Item> list){
+    private boolean checkIfWeaponsIsFull() {
         boolean tmp = true;
-        Item temp;
+        Weapon temp;
         try {
-                temp = list.get(19);
-        }catch (IndexOutOfBoundsException e){ tmp = false; }
+            temp = listOfWeapons.get(getCapacity() - 1);
+        } catch (IndexOutOfBoundsException e) {
+            tmp = false;
+        }
         return tmp;
     }
+
+    private boolean checkIfScrollsIsFull() {
+        boolean tmp = true;
+        Scroll temp;
+        try {
+            temp = listOfScrolls.get(getCapacity() - 1);
+        } catch (IndexOutOfBoundsException e) {
+            tmp = false;
+        }
+        return tmp;
+    }
+
+    private boolean checkIfPotionsIsFull() {
+        boolean tmp = true;
+        Potion temp;
+        try {
+            temp = listOfPotions.get(getCapacity() - 1);
+        } catch (IndexOutOfBoundsException e) {
+            tmp = false;
+        }
+        return tmp;
+    }
+
+    private boolean checkIfInventoryIsFull(Item item) {
+        boolean tmp = true;
+        try {
+            if (item instanceof Armour) {
+                tmp = checkIfArmourIsFull();
+            } else if (item instanceof Weapon) {
+                tmp = checkIfWeaponsIsFull();
+            } else if (item instanceof Potion) {
+                tmp = checkIfPotionsIsFull();
+            } else if (item instanceof Scroll) {
+                tmp = checkIfScrollsIsFull();
+            }
+        } catch (IndexOutOfBoundsException e) {
+            tmp = false;
+        }
+        return tmp;
+    }
+
+
     //Coins
     public void addCoins(int amount) {
         this.coinsInBag = this.getCoinsInBag() + amount;
     }
 
     public void removeCoins(int amount) {
-        if(amount >= this.getCoinsInBag()){
+        if (amount >= this.getCoinsInBag()) {
             this.coinsInBag = 0;
-        }else{
+        } else {
             this.coinsInBag = this.getCoinsInBag() - amount;
         }
     }
 
-    private boolean checkIfCanAfford(int needed){
-        return (this.getCoinsInBag()>=needed);
+    private boolean checkIfCanAfford(int needed) {
+        return (this.getCoinsInBag() >= needed);
     }
 
-    public boolean checkIfCanAfford(Item item){
+    public boolean checkIfCanAfford(Item item) {
         int needed = item.getCoinValue();
         return checkIfCanAfford(needed);
     }
 
-    public void coinReport(){
+    public void coinReport() {
         printToConsole(coinReporter(this.getCoinsInBag()));
     }
 
     //Remove from Inventory
-    public void removeItemFromInventory(Item item){
-        if(item instanceof Armour){
-            removeArmourFromInventory((Armour)item);
-        }else if(item instanceof Weapon){
-            removeWeaponFromInventory((Weapon)item);
-        }else if(item instanceof Potion){
-            removePotionFromInventory((Potion)item);
-        }else if(item instanceof Scroll){
-            removeScrollFromInventory((Scroll)item);
+    public void removeItemFromInventory(Item item) {
+        if (item instanceof Armour) {
+            removeArmourFromInventory((Armour) item);
+        } else if (item instanceof Weapon) {
+            removeWeaponFromInventory((Weapon) item);
+        } else if (item instanceof Potion) {
+            removePotionFromInventory((Potion) item);
+        } else if (item instanceof Scroll) {
+            removeScrollFromInventory((Scroll) item);
         }
     }
 
@@ -172,19 +224,27 @@ public class Inventory {
     }
 
     //Add to Inventory
-    private void addArmourToInventory(Armour item) {this.listOfArmour.add(item);}
+    private void addArmourToInventory(Armour item) {
+        this.listOfArmour.add(item);
+    }
 
-    private void addWeaponToInventory(Weapon item) {this.listOfWeapons.add(item);}
+    private void addWeaponToInventory(Weapon item) {
+        this.listOfWeapons.add(item);
+    }
 
-    private void addPotionToInventory(Potion potion) {this.listOfPotions.add(potion); }
+    private void addPotionToInventory(Potion potion) {
+        this.listOfPotions.add(potion);
+    }
 
-    private void addScrollToInventory(Scroll scroll) { this.listOfScrolls.add(scroll); }
+    private void addScrollToInventory(Scroll scroll) {
+        this.listOfScrolls.add(scroll);
+    }
 
     public void addItemToInventory(Item item) {
-        if(item instanceof CoinBag){
+        if (item instanceof CoinBag) {
             addCoins(((CoinBag) item).getAmountOfCoins());
             printToConsole(addedToInventoryString(item));
-        }else if (!checkIfInventoryIsFull(item)) {
+        } else if (!checkIfInventoryIsFull(item)) {
             if (item instanceof Armour) {
                 addArmourToInventory((Armour) item);
             } else if (item instanceof Weapon) {
@@ -195,21 +255,40 @@ public class Inventory {
                 addScrollToInventory((Scroll) item);
             }
             printToConsole(addedToInventoryString(item));
-        }else{
+        } else {
             printToConsole(inventoryIsFullString());
         }
     }
 
     //Interact
 
-    public void open(){
+    public void open() {
         int ans1 = requestInputInRange(presentInvOptions(), 3);
-        switch (ans1){
+        switch (ans1) {
             case 1:
                 //see items
                 break;
             case 2:
-                checkIfInventoryIsFull()
+                if (checkIfWeaponsIsFull()) {
+                    printToConsole(inventoryIsFullString("weapons"));
+                }
+                if (checkIfArmourIsFull()) {
+                    printToConsole(inventoryIsFullString("armour"));
+                }
+                if (checkIfScrollsIsFull()) {
+                    printToConsole(inventoryIsFullString("scrolls"));
+                }
+                if (checkIfPotionsIsFull()) {
+                    printToConsole(inventoryIsFullString("potions"));
+                }
+                break;
+            case 3:
+                printToConsole(askForNameOfItem());
+                String answer = takeNextLine();
+                if(this.checkIfItemIsPresent(answer)){
+                 printToConsole(itemIsPresentString(answer));
+                }
+                break;
         }
     }
 }

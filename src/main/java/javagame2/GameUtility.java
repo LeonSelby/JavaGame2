@@ -121,12 +121,12 @@ public class GameUtility {
 
     public static String noticeBoardAheadString(){return "A noticeboard is to the East, take a look to get a lay of the land!";}
 
-  public static String presentNoticeboardOptions(){return "Which part of the noticeboard would you like to see? \n" +
-          " 1. Map \n 2. Map legend \n 3. Walk Away.";}
+    public static String presentNoticeboardOptions(){return "Which part of the noticeboard would you like to see? \n" +
+            " 1. Map \n 2. Map legend \n 3. Walk Away.";}
 
     public static String mapLegendString(){return " X: Barrier. C: Chest. S: Shop \n M: Danger! W: Danger+! +:Strange Obelisk \n" +
             " B: Boss N: Noticeboard R:Rare Chest U: You!";}
-          //Character
+    //Character
     public static String askForNameString(){return "What is your name?";}
 
     public static String levelUpString(){return "You have gained a level! Ratings have increased by 2, and health by 20!";}
@@ -190,9 +190,9 @@ public class GameUtility {
 
     public static String itemNotPresentString(){ return "That item isn't present in this inventory."; }
 
-   public static String cantSellItemNotInInvString(){return "You can't sell an item not in your inventory!";}
+    public static String cantSellItemNotInInvString(){return "You can't sell an item not in your inventory!";}
 
-   public static String noPotionsString(){return "You have no potions!";}
+    public static String noPotionsString(){return "You have no potions!";}
 
     public static String notEnoughCoinsPurchaseString() {
         return "You can't spend that many coins!";
@@ -204,10 +204,18 @@ public class GameUtility {
 
     public static String inventoryIsFullString(){return "Your inventory is too full for anymore items of this kind!";}
 
+    public static String inventoryIsFullString(String list){return "Your " + list + " storage is too full for anymore items of this kind!";}
+
     public static String addedToInventoryString(Item loot){return loot.getName() + " has been added to inventory!";}
 
     public static String presentInvOptions(){
-        return "What would you like to do?\n 1. See Items 2. Check if full. \n 3. Search.";}
+        return "What would you like to do?\n 1. See Items \n 2. Check if full. \n 3. Search.";}
+
+    public static String askForNameOfItem(){return "Please type a name to search for.";}
+
+    public static String itemIsPresentString(Item item){return item.getName() + " is in your inventory!";}
+
+    public static String itemIsPresentString(String item){return item + " is in your inventory!";}
 
     //Movement
     public static String movementStringQuestion(){return "Which direction would you like to move?";}
