@@ -195,7 +195,7 @@ public class GameUtility {
    public static String noPotionsString(){return "You have no potions!";}
 
     public static String notEnoughCoinsPurchaseString() {
-        return "Can't spend that many coins!";
+        return "You can't spend that many coins!";
     }
 
     public static String coinReporter(int amount) {
@@ -205,6 +205,9 @@ public class GameUtility {
     public static String inventoryIsFullString(){return "Your inventory is too full for anymore items of this kind!";}
 
     public static String addedToInventoryString(Item loot){return loot.getName() + " has been added to inventory!";}
+
+    public static String presentInvOptions(){
+        return "What would you like to do?\n 1. See Items 2. Check if full. \n 3. Search.";}
 
     //Movement
     public static String movementStringQuestion(){return "Which direction would you like to move?";}

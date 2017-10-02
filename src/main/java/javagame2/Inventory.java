@@ -9,6 +9,8 @@ import javagame2.items.weapons.Weapon;
 import lombok.Data;
 
 import static javagame2.GameUtility.*;
+import static javagame2.TakeInput.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,6 +92,14 @@ public class Inventory {
         return tmp;
     }
 
+    private boolean checkIfInventoryIsFull(List<Item> list){
+        boolean tmp = true;
+        Item temp;
+        try {
+                temp = list.get(19);
+        }catch (IndexOutOfBoundsException e){ tmp = false; }
+        return tmp;
+    }
     //Coins
     public void addCoins(int amount) {
         this.coinsInBag = this.getCoinsInBag() + amount;
@@ -193,5 +203,13 @@ public class Inventory {
     //Interact
 
     public void open(){
+        int ans1 = requestInputInRange(presentInvOptions(), 3);
+        switch (ans1){
+            case 1:
+                //see items
+                break;
+            case 2:
+                checkIfInventoryIsFull()
+        }
     }
 }
