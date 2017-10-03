@@ -271,23 +271,23 @@ public class Inventory {
             case 2:
                 if (checkIfWeaponsIsFull()) {
                     printToConsole(inventoryIsFullString("weapons"));
-                }
+                } else{printToConsole(inventoryIsNotFullString("weapons"));}
                 if (checkIfArmourIsFull()) {
                     printToConsole(inventoryIsFullString("armour"));
-                }
+                }else{printToConsole(inventoryIsNotFullString("armour"));}
                 if (checkIfScrollsIsFull()) {
                     printToConsole(inventoryIsFullString("scrolls"));
-                }
+                }else{printToConsole(inventoryIsNotFullString("scrolls"));}
                 if (checkIfPotionsIsFull()) {
                     printToConsole(inventoryIsFullString("potions"));
-                }
+                }else{printToConsole(inventoryIsNotFullString("potions"));}
                 break;
             case 3:
                 printToConsole(askForNameOfItem());
                 String answer = takeNextLine();
                 if(this.checkIfItemIsPresent(answer)){
                  printToConsole(itemIsPresentString(answer));
-                }
+                } else { printToConsole(itemNotPresentString());}
                 break;
         }
     }

@@ -85,8 +85,8 @@ public class Battle {
                     break;
             }
         }else{
-            for( int i = 0; i < enemy.getNumberOfAttacks(); i++){
-            enemy.attack(player);}
+            for( int i = 0; i < ((Enemy)combatUnit).getNumberOfAttacks(); i++){
+            combatUnit.attack(player);}
         }
     }
 

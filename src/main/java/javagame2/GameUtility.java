@@ -217,6 +217,7 @@ public class GameUtility {
 
     public static String itemIsPresentString(String item){return item + " is in your inventory!";}
 
+   public static String inventoryIsNotFullString(String inventory){return "Your " + inventory + " is not full.";}
     //Movement
     public static String movementStringQuestion(){return "Which direction would you like to move?";}
 
